@@ -5,7 +5,7 @@ const client = new Client({ disableMentions: "everyone" });
 const fs = require('fs');
 const command = require('./handlers/command');
 
-
+var token = process.env.TOKEN;
 client.commands = new Collection();
 client.aliases = new Collection();
 client.categories = fs.readdirSync("./commands/");
