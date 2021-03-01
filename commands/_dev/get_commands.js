@@ -6,7 +6,7 @@ module.exports = {
     description: 'Lists available commands',
     cateegory: 'dev'
 
-    async run(client, message, args, con) {
+    run: async (client, message, args, con) {
         fs.readdir("./commands/", (err, files) => {
             if(err) console.error(err);
     
