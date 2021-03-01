@@ -4,7 +4,7 @@ const fs = require("fs");
 module.exports = {
     name: 'cmds',
     description: 'Lists available commands',
-    cateegory: 'dev'
+    category: 'dev',
 
     run: async (client, message, args, con) {
         fs.readdir("./commands/", (err, files) => {
