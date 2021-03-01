@@ -14,7 +14,7 @@ client.categories = fs.readdirSync("./commands/");
   require(`./handlers/${handler}`)(client);
 });
 client.on('ready', () => {
-  console.log('The client is ready!')
+  console.log('The client is ready to rock and roll!')
 
   command(client, 'ban', (message) => {
     const { member, mentions } = message
