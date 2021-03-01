@@ -6,7 +6,7 @@ module.exports = {
     description: 'Lists available commands',
     category: 'dev',
 
-    run: async (client, message, args, con) {
+    run: async (client, message, args, con) => {
         fs.readdir("./commands/", (err, files) => {
             if(err) console.error(err);
     
@@ -23,7 +23,7 @@ module.exports = {
                 let props = require(`./${f}`);
                 namelist = props.name;
                 desclist = props.description;
-                message.author.send(`**${namelist}** \n${desclist} \n`);
+                message.author.send(`**${namelist}** \n${desclist} \n`); 
             });
      
 
