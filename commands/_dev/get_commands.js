@@ -1,6 +1,6 @@
 module.exports = {
-  name: 'nick',
-  category: 'admin',
+  name: 'cmds',
+  category: 'dev',
   aliases: [''],
   description: '',
   run: async (client, message, args) => {
