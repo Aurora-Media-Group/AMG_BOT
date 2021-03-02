@@ -10,7 +10,7 @@ module.exports = {
         .setColor('#0477C2')
     .setTitle('')
     .addFields(
-        { name: 'Commands', value: 'g!help,g!userinfo,g!hug @someone,g!cool @someone,g!avatar or g!avatar @someone'})
+        { name: 'Commands', value: 'g!help,g!userinfo,g!hug @someone,g!cool @someone,g!avatar @someone (you can type it without mention and with mention),g!ticket (reason)'})
     .setTimestamp()
         message.channel.send(myEmbed);
         console.log()
