@@ -77,7 +77,7 @@ client.on('guildBanAdd', async (guild, user) => {
 });
 
 client.on('guildMemberAdd', async member => {
-	member.guild.systemChannel.send(`Welcome ${member.mention}`);
+	member.guild.systemChannel.send(`Welcome @${member.tag}`);
 });
 
 process.on('unhandledRejection', (reason, promise) => {
