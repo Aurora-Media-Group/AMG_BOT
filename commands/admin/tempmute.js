@@ -44,3 +44,4 @@ module.exports = {
             message.channel.send(`${Member.displayName} is now unmuted`)
         }, ms(time))
     }
+}
