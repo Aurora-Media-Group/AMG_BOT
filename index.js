@@ -2,12 +2,14 @@ const { Client, Collection, MessageEmbed } = require('discord.js');
 const { prefix } = require('./config.json');
 const client = new Client({ disableMentions: 'everyone' });
 
+
 const fs = require('fs');
 const command = require('./handlers/command');
 
 var token = process.env.TOKEN;
 client.commands = new Collection();
 client.aliases = new Collection();
+client.ticketcategory = 816309804481904751
 client.categories = fs.readdirSync('./commands/');
 
 ['command'].forEach(handler => {
