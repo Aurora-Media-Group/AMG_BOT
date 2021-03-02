@@ -14,7 +14,7 @@ module.exports = {
             if(jsfiles.length <= 0) {
                 console.log("No commands to load!");
                 return;
-            };
+            });
             
             var namelist = "";
             var desclist = "";
