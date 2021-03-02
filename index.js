@@ -14,7 +14,7 @@ client.categories = fs.readdirSync('./commands/');
 	require(`./handlers/${handler}`)(client);
 });
 client.on('ready', () => {
-	console.log('Bot is ready to rock and roll');
+	console.log('Bot is ready');
 });
 
 client.on('message', async message => {
@@ -77,7 +77,7 @@ client.on('guildBanAdd', async (guild, user) => {
 });
 
 client.on('guildMemberAdd', async member => {
-	member.guild.systemChannel.send(`Welcome @${member}`);
+	member.guild.systemChannel.send(`Welcome ${member}`);
 });
 
 process.on('unhandledRejection', (reason, promise) => {
