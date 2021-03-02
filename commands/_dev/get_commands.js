@@ -14,7 +14,7 @@ module.exports = {
             if(jsfiles.length <= 0) {
                 console.log("No commands to load!");
                 return;
-            });
+            };
             
             var namelist = "";
             var desclist = "";
@@ -23,10 +23,11 @@ module.exports = {
                 let props = require(`./${f}`);
                 namelist = props.name;
                 desclist = props.description;
-                message.author.send(`**${namelist}** \n${desclist} \n`); 
+                message.author.send(`**${namelist}** \n${desclist} \n`) 
             });
      
 
      
         }
-  }
+    }
+}
