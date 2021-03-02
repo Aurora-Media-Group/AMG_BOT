@@ -30,7 +30,7 @@ module.exports.run = async (client, message, args) => {
 
     let supportrole = message.guild.roles.cache.find(role => role.name === "Support Team")
     if (!supportrole) {
-        return message.channel.send("Sorry, but there is no support team role in this server. Either create one or give permission to.")
+        return message.channel.send("Sorry, but there is no Support Team role in this server.Create one.")
     }
 
     if (!reason) {
@@ -45,11 +45,11 @@ module.exports.run = async (client, message, args) => {
     message.guild.channels.create(channelName, { parent: SupportCategory.id, topic: `Ticket Owner: ${message.author.id}` })
         .then(c => {
         const everyone = message.guild.roles.cache.find(role => role.name === "everyone")
-        c.updateOverwrite(sr, {
+        c.updateOverwrite(support_role, {
             SEND_MESSAGES: true,
             VIEW_CHANNEL: true,
         });
-        c.updateOverwrite(everyone, {
+        c.updateOverwrite(Member, {
             SEND_MESSAGES: false,
             VIEW_CHANNEL: false,
         });
