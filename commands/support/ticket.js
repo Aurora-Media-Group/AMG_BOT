@@ -11,7 +11,7 @@ module.exports = {
         if(ch) return message.channel.send('You already have a ticket open.')
         message.guild.channels.create(`${message.author.id}`, {
             type : 'text',
-            parent : '816309804481904751',
+            parent : '816328167626768406',
             permissionOverwrites : [
                 {
                     id : message.guild.id,
