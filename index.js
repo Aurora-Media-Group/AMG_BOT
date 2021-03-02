@@ -93,6 +93,26 @@ By using this server you agree to the Terms of Service outlined in the <#6611680
 Have Fun`);
 });
 
+client.on('guildMemberAdd', async member => {
+
+  
+
+	member.guild.systemChannel.send(`Welcome ${member} to Aurora Media Group 
+
+If you are looking to join the group then check <#661719364323770438> for information. 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+Check out <#553998205696606218> to get your Custom Roles!
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+By using this server you agree to the Terms of Service outlined in the <#661168031271223306>
+
+Have Fun`);
+});client.on('guildMemberRemove', async member => {
+
+  
+
+	member.guild.systemChannel.send(`Goodbye ${member}.We hope you come back.`);
+});
+
 process.on('unhandledRejection', (reason, promise) => {
 	console.log('Unhandled Rejection at:', reason.stack || reason);
 	return;
