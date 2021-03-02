@@ -14,7 +14,7 @@ client.categories = fs.readdirSync('./commands/');
 	require(`./handlers/${handler}`)(client);
 });
 client.on('ready', () => {
-	console.log('Bot is ready');
+	console.log('Bot is ready to rock and roll');
 });
 
 client.on('message', async message => {
