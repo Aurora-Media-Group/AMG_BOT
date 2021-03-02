@@ -24,7 +24,7 @@ module.exports = {
             ]
         }).then(async channel=> {
             message.reply(`click <#${channel.id}> to view your ticket`)
-            channel.send(`${message.author}, welcome to your ticket!`)
+            channel.send(`${message.author}, welcome to your ticket! We will be with you soon. In order to close the ticket, you need to type g!close`)
         })
     }
 }
