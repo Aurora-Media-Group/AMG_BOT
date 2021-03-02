@@ -79,7 +79,7 @@ client.on('guildBanAdd', async (guild, user) => {
 client.on('guildMemberAdd', async member => {
 	member.guild.systemChannel.send(`Welcome ${member} to Aurora Media Group 
 
-If you are looking to join the group then check #quick-info for information. 
+If you are looking to join the group then check #<661719364323770438> for information. 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Check out #custom-roles to get your Custom Roles!
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
