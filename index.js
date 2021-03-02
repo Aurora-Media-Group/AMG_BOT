@@ -77,13 +77,16 @@ client.on('guildBanAdd', async (guild, user) => {
 });
 
 client.on('guildMemberAdd', async member => {
+
+  
+
 	member.guild.systemChannel.send(`Welcome ${member} to Aurora Media Group 
 
-If you are looking to join the group then check #<661719364323770438> for information. 
+If you are looking to join the group then check <#661719364323770438> for information. 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-Check out #custom-roles to get your Custom Roles!
+Check out <#553998205696606218> to get your Custom Roles!
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-By using this server you agree to the Terms of Service outlined in the #discord-rules 
+By using this server you agree to the Terms of Service outlined in the <#661168031271223306>
 
 Have Fun`);
 });
