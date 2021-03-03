@@ -90,7 +90,10 @@ client.on(`message`, message => {
 });
 
 client.on('guildBanAdd', async (guild, user) => {
-	console.log(`${user.tag} got rekt from ${guild.name}.`);
+  if (guild.id == 478952313562595329) {
+    client.channels.fetch("634036386416164887")
+      .then(channel => channel.send(`${user.tag} got banned from ${guild.name}.`));
+  }
 });
 
 client.on('guildMemberAdd', async (member) => {
@@ -106,12 +109,11 @@ By using this server you agree to the Terms of Service outlined in the <#6611680
 
 Have Fun`);
   } else if (member.guild.id === 782219245391314954) {
-    member.guild.systemChannel.send(`Welcome ${member}`)
+    member.guild.systemChannel.send(`${member} has joined the Aurora SMP Discord`);
   }
 });
 
 client.on('guildMemberRemove', async (member) => {
-
 	member.guild.systemChannel.send(`Goodbye ${member}.We hope you come back.`);
 });
 

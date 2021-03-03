@@ -5,5 +5,4 @@
   - Warn
 
 
-- Welcome/GoodBye message
 - Add logs (from bans/kicks etc or from messages being deleted or edited)
