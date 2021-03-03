@@ -121,7 +121,7 @@ process.on('unhandledRejection', (reason, promise) => {
 });
 
 client.on('message', async(message) => {
-    if(message.channel.parentID !== '816328167626768406') return;
+    if(message.channel.parentID !== '689584207114272768') return;
     client.ticketTranscript.findOne({ Channel : message.channel.id }, async(err, data) => {
         if(err) throw err;
         if(data) {
