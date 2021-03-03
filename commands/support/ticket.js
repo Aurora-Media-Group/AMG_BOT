@@ -7,8 +7,9 @@ module.exports = {
      * @param {Message} message
      */
     run : async(client, message) => {
+        message.delete()
         const ch = message.guild.channels.cache.find(ch => ch.name === message.author.id)
-        if(ch) return message.channel.send('You already have a ticket open.')
+        if(ch) return ch.send(`${member}, You already have a ticket open.`)
         message.guild.channels.create(`${message.author.id}`, {
             type : 'text',
             parent : '816328167626768406',
@@ -23,7 +24,7 @@ module.exports = {
                 }
             ]
         }).then(async channel=> {
-            message.reply(`click <#${channel.id}> to view your ticket`)
+            //message.reply(`click <#${channel.id}> to view your ticket`)
             channel.send(`${message.author}, welcome to your ticket! We will be with you soon. In order to close the ticket, you need to type g!close`)
         })
     }
