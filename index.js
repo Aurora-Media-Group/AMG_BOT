@@ -1,6 +1,21 @@
 const { Client, Collection, MessageEmbed } = require('discord.js');
 const { prefix } = require('./config.json');
 const client = new Client({ disableMentions: 'everyone' });
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb+srv://Janix:k1012310k@cluster1.b3ee9.mongodb.net/data', {
+  useUnifiedTopology : true,
+  useNewUrlParser : true,
+  }).then(console.log('Connected to mongo db!'))
+//schema  -----------------------------------------
+ 
+client.ticketTranscript = mongoose.model('transcripts', 
+    new mongoose.Schema({
+        Channel : String,
+        Content : Array
+    })
+)
+// -------------------------------------------------
 
 
 const fs = require('fs');
@@ -104,5 +119,25 @@ process.on('unhandledRejection', (reason, promise) => {
 	console.log('Unhandled Rejection at:', reason.stack || reason);
 	return;
 });
+
+client.on('message', async(message) => {
+    if(message.channel.parentID !== '816328167626768406') return;
+    client.ticketTranscript.findOne({ Channel : message.channel.id }, async(err, data) => {
+        if(err) throw err;
+        if(data) {
+           console.log('there is data')
+           data.Content.push(`${message.author.tag} : ${message.content}`) 
+        } else {
+            console.log('there is no data')
+            data = new client.ticketTranscript({ Channel : message.channel.id, Content: `${message.author.tag} : ${message.content}`})
+        }
+        await data.save()
+            .catch(err =>  console.log(err))
+        console.log('data is saved ')
+    })
+
+});
+
+
 
 client.login(token);

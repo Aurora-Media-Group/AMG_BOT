@@ -13,7 +13,9 @@ module.exports = {
         message.channel.send('Deleting ticket in 5 seconds.....')
         setTimeout(() => {
             message.channel.delete().then(async ch=> {
+              // This line has error which I guess is being thrown below
                 client.ticketTranscript.findOne({ Channel : ch.id }, async(err, data) => {
+              //
                     if(err) throw err;
                     if(data) {
                         fs.writeFileSync(`../${ch.id}.txt`, data.Content.join("\n\n"))
