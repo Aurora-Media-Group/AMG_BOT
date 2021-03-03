@@ -9,7 +9,7 @@ module.exports = {
     run : async(client, message) => {
         message.delete()
         const ch = message.guild.channels.cache.find(ch => ch.name === message.author.id)
-        if(ch) return ch.send(`${member}, You already have a ticket open.`)
+        if(ch) return ch.send(`${message.author}, You already have a ticket open.`)
         message.guild.channels.create(`${message.author.id}`, {
             type : 'text',
             parent : '816328167626768406',
