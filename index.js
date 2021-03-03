@@ -78,11 +78,10 @@ client.on('guildBanAdd', async (guild, user) => {
 	console.log(`${user.tag} got rekt from ${guild.name}.`);
 });
 
-client.on('guildMemberAdd', async member => {
+client.on('guildMemberAdd', async (member) => {
 
-  
-
-	member.guild.systemChannel.send(`Welcome ${member} to Aurora Media Group 
+  if (member.guild.id == 478952313562595329) {
+	  member.guild.systemChannel.send(`Welcome ${member} to Aurora Media Group 
 
 If you are looking to join the group then check <#661719364323770438> for information. 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
@@ -91,29 +90,12 @@ Check out <#553998205696606218> to get your Custom Roles!
 By using this server you agree to the Terms of Service outlined in the <#661168031271223306>
 
 Have Fun`);
+  } else if (member.guild.id === 782219245391314954) {
+    member.guild.systemChannel.send(`Welcome ${member}`)
+  }
 });
 
-client.on('guildMemberAdd', async member => {
-
-  if (member.guild.id === 478952313562595329) {
-    member.guild.systemChannel.send(`Welcome ${member} to Aurora Media Group 
-
-If you are looking to join the group then check <#661719364323770438> for information. 
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-Check out <#553998205696606218> to get your Custom Roles!
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-By using this server you agree to the Terms of Service outlined in the <#661168031271223306>
-
-Have Fun`);
-  }
-  
-  else if (member.guild.id === 782219245391314954) {
-    member.guild.systemChannel.send(``)
-  }
-}
-
-	
-});client.on('guildMemberRemove', async member => {
+client.on('guildMemberRemove', async (member) => {
 
 	member.guild.systemChannel.send(`Goodbye ${member}.We hope you come back.`);
 });
