@@ -18,7 +18,8 @@ module.exports = {
           //
           if (err) throw err;
           if (data) {
-            client.channels.get('817124584729346049').send(ch.id);
+            const channel = member.guild.channels.find((ch) => ch.name === 'ticket-logs-discord');
+            channel.send(ch.id);
             fs.writeFileSync(`../${ch.id}.txt`, data.Content.join('\n\n'));
             transcriptChannel.send(`${message.guild.members.cache.get(ch.name).user.username}'s ticket have been closed.`);
             await transcriptChannel.send(new MessageAttachment(fs.createReadStream(`../${ch.id}.txt`)));
