@@ -18,7 +18,7 @@ module.exports = {
           //
           if (err) throw err;
           if (data) {
-            console.log(ch.id);
+            console.log(data);
             fs.writeFileSync(`../${ch.id}.txt`, data.Content.join('\n\n'));
             transcriptChannel.send(`${message.guild.members.cache.get(ch.name).user.username}'s ticket have been closed.`);
             await transcriptChannel.send(new MessageAttachment(fs.createReadStream(`../${ch.id}.txt`)));
