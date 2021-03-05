@@ -16,5 +16,7 @@ module.exports=  {
         await Member.roles.remove(role)
 
         message.channel.send(`${Member.displayName} is now unmuted`)
+
+        // here, check if the user is in the tempmute DB and 
     }
 }
