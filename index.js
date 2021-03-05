@@ -55,7 +55,15 @@ client.on('message', async message => {
 		});
 	}
 	if (message.author.bot) return;
-	if (!message.content.startsWith(prefix)) return;
+
+  prefix_found = false
+
+  for (const i in prefix) {
+    console.log(i)
+	  if (!message.content.startsWith(i)) {prefix_found=true};
+  };
+
+  if (prefix_found === false) return;
 	if (!message.guild) return;
 	if (!message.member)
 		message.member = await message.guild.fetchMember(message);
