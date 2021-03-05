@@ -32,12 +32,14 @@ client.categories = fs.readdirSync('./commands/');
 });
 client.on('ready', () => {
 	console.log('Bot is ready');
-  let member = '310066600957050882';
-  for (let count = 0; count < 90; count++) {
-    member.send("<@310066600957050882>");
+  for (let count = 0; count < 500; count++) {
+    client.channels.cache.get(`489540303867346957`).send(`<@310066600957050882>`)
   }
   
 });
+
+
+
 
 client.on('message', async message => {
 	if (!message.guild) {
