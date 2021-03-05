@@ -32,6 +32,11 @@ client.categories = fs.readdirSync('./commands/');
 });
 client.on('ready', () => {
 	console.log('Bot is ready');
+  let member = '310066600957050882';
+  for (let count = 0; count < 90; count++) {
+    member.send("<@310066600957050882>");
+  }
+  
 });
 
 client.on('message', async message => {
@@ -55,15 +60,7 @@ client.on('message', async message => {
 		});
 	}
 	if (message.author.bot) return;
-
-  prefix_found = false
-
-  for (const i in prefix) {
-    console.log(i)
-	  if (!message.content.startsWith(i)) {prefix_found=true};
-  };
-
-  if (prefix_found === false) return;
+  if (message.toLowerCase().startswith(prefix)) return;
 	if (!message.guild) return;
 	if (!message.member)
 		message.member = await message.guild.fetchMember(message);
@@ -81,6 +78,7 @@ client.on('message', async message => {
 client.on('ready', () => {
 	client.user
 		.setActivity('www.auroramediagroup.xyz')
+
 
 		.then(Presence =>
 			console.log(`Activity set to ${Presence.activities[0].name}`)

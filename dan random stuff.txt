@@ -1,3 +1,12 @@
 https://discord.js.org/#/
 
 DONT FORGET ; AFTER LINES!
+
+
+      random = Math.floor(Math.random() * 10); 
+
+      if (random === 0) {  
+        message.channel.send(`Bishop Good`)
+      } else {
+        message.channel.send(`Bishop Bad`)
+      }
