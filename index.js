@@ -27,15 +27,14 @@ client.aliases = new Collection();
 client.ticketCategory = 816328167626768406
 client.categories = fs.readdirSync('./commands/');
 
+
 ['command'].forEach(handler => {
 	require(`./handlers/${handler}`)(client);
 });
-client.on('ready', () => {
-	console.log('Bot is ready');
-  for (let count = 0; count < 500; count++) {
-    client.channels.cache.get(`489540303867346957`).send(`<@310066600957050882>`)
-  }
+
+client.on('ready', () =>  {
   
+	console.log('Bot is ready');
 });
 
 
@@ -62,7 +61,7 @@ client.on('message', async message => {
 		});
 	}
 	if (message.author.bot) return;
-  if (message.toLowerCase().startswith(prefix)) return;
+  if (message.startswith(prefix)) return;
 	if (!message.guild) return;
 	if (!message.member)
 		message.member = await message.guild.fetchMember(message);
