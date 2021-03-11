@@ -61,7 +61,7 @@ client.on('message', async message => {
 		});
 	}
 	if (message.author.bot) return;
-  if (message.startswith(prefix)) return;
+  if (message.startsWith(prefix)) return;
 	if (!message.guild) return;
 	if (!message.member)
 		message.member = await message.guild.fetchMember(message);
